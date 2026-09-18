@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Григорий Ретота — веб-разработка, дизайн, фотография и исследование цифровых систем. Калининград.">
+  <meta name="theme-color" content="#06080c">
+  <meta property="og:title" content="Григорий Ретота — illuminatirex">
+  <meta property="og:description" content="Веб-разработка, дизайн, фотография и исследование цифровых систем.">
+  <title>Григорий Ретота — illuminatirex</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#06080c;--panel:#0c1118;--ink:#edf5f2;--muted:#96a5a0;--line:rgba(195,255,241,.15);--acid:#b8ff3d;--cyan:#55f7e3;--hot:#ff5775;--serif:Georgia,serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,sans-serif;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+    .noise{position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");mix-blend-mode:screen}
+    .grid{position:fixed;inset:0;z-index:-1;background:linear-gradient(rgba(85,247,227,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(85,247,227,.028) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(#000,transparent 85%)}
+    nav{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font:11px 'Space Mono';letter-spacing:.08em;text-transform:uppercase}
+    .brand{font:800 18px Syne;letter-spacing:-.04em}.brand i{font-style:normal;color:var(--acid)}.navlinks{display:flex;gap:24px;color:var(--muted)}.navlinks a:hover{color:var(--cyan)}
+    .hero{min-height:790px;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:55px;position:relative}.eyebrow{font:700 12px 'Space Mono';color:var(--acid);letter-spacing:.12em;text-transform:uppercase}
+    .hero h1{font:800 clamp(60px,10vw,140px)/.85 Syne;margin:22px 0 28px;letter-spacing:-.08em;max-width:820px}.outline{color:transparent;-webkit-text-stroke:1px rgba(237,245,242,.75)}
+    .hero p{max-width:590px;color:#bdcac5;font-size:18px;line-height:1.75}.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:34px}.tag{font:11px 'Space Mono';border:1px solid var(--line);padding:9px 11px;color:var(--cyan);background:rgba(85,247,227,.03)}
+    .sigil{width:320px;aspect-ratio:1;border:1px solid var(--line);position:relative;display:grid;place-items:center;background:radial-gradient(circle at center,rgba(184,255,61,.16),transparent 51%);animation:float 6s ease-in-out infinite}.sigil:before,.sigil:after{content:"";position:absolute;border:1px solid rgba(184,255,61,.45);border-radius:50%}.sigil:before{inset:27px}.sigil:after{inset:78px}.sigil b{font:800 150px/1 Syne;color:var(--acid);text-shadow:0 0 35px rgba(184,255,61,.35)}.sigil small{position:absolute;bottom:16px;font:10px 'Space Mono';letter-spacing:.12em;color:var(--muted)}
+    @keyframes float{50%{transform:translateY(-12px) rotate(3deg)}}.scroll{position:absolute;bottom:34px;font:10px 'Space Mono';color:var(--muted);letter-spacing:.1em}.scroll:before{content:'↓';color:var(--acid);margin-right:12px}
+    .section{padding:116px 0;border-top:1px solid var(--line)}.sectionhead{display:flex;justify-content:space-between;gap:25px;align-items:baseline;margin-bottom:46px}.sectionhead h2{font:700 clamp(37px,5vw,66px)/.95 Syne;letter-spacing:-.065em;margin:0}.index{font:11px 'Space Mono';color:var(--acid)}
+    .about{display:grid;grid-template-columns:.7fr 1.3fr;gap:80px}.manifest{font:italic 35px/1.25 var(--serif);color:#d8e5df;margin:0}.copy{font-size:18px;line-height:1.8;color:#b8c5c0;margin:0}.copy strong{color:var(--ink)}
+    .systems{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.card{background:var(--panel);min-height:235px;padding:28px;transition:.25s}.card:hover{background:#111923;transform:translateY(-4px)}.card .num{font:11px 'Space Mono';color:var(--acid)}.card h3{font:700 25px/1 Syne;margin:35px 0 13px;letter-spacing:-.05em}.card p{margin:0;color:var(--muted);line-height:1.6;font-size:14px}
+    .shelfhead{font:11px 'Space Mono';color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin:44px 0 18px}.shelfhead:first-child{margin-top:0}
+    .books{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:24px 20px;margin-bottom:8px}
+    .book{display:flex;flex-direction:column;gap:12px}
+    .book-cover{aspect-ratio:2/3;border:1px solid var(--line);position:relative;overflow:hidden;background:linear-gradient(160deg,#131c26,#070a0e 68%);padding:14px;display:flex;flex-direction:column;justify-content:flex-end;transition:.25s}
+    .book-cover:hover{transform:translateY(-5px);border-color:var(--acid)}
+    .book-cover:before{content:attr(data-mark);position:absolute;top:14px;left:14px;font:800 12px 'Space Mono';letter-spacing:.06em;color:var(--acid)}
+    .book-cover:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(184,255,61,.14),transparent 55%)}
+    .book-cover span{position:relative;font:800 21px/1.08 Syne;letter-spacing:-.03em;color:var(--ink)}
+    .book-cover.c2:before{color:var(--cyan)}.book-cover.c2:after{background:radial-gradient(circle at 30% 20%,rgba(85,247,227,.14),transparent 55%)}
+    .book-cover.c3:before{color:var(--hot)}.book-cover.c3:after{background:radial-gradient(circle at 30% 20%,rgba(255,87,117,.14),transparent 55%)}
+    .book-meta{font:11px 'Space Mono';color:var(--muted);line-height:1.55}.book-meta b{display:block;color:var(--ink);font:700 13.5px Manrope;margin-bottom:3px;letter-spacing:-.01em}
+    @media(max-width:760px){.books{grid-template-columns:repeat(2,1fr)}}
+    .quote-block{padding:135px 0;text-align:center;background:linear-gradient(140deg,#0e1518,#070a0e)}blockquote{font:italic clamp(31px,5vw,62px)/1.15 var(--serif);max-width:1000px;margin:0 auto;color:#e6f1ec}blockquote:before{content:'“';display:block;color:var(--acid);font:90px/0.5 Syne;margin-bottom:20px}.attribution{margin-top:29px;color:var(--muted);font:11px 'Space Mono';letter-spacing:.09em;text-transform:uppercase}
+    .contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px}.contact h2{font:700 clamp(44px,7vw,94px)/.9 Syne;letter-spacing:-.08em;margin:0}.contact h2 span{color:var(--acid)}
+    .feedback{border-top:1px solid var(--line);padding-top:4px}.field{margin-top:20px}.field label{display:block;font:10px 'Space Mono';color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}.field input,.field textarea{width:100%;border:1px solid var(--line);background:#090e14;color:var(--ink);padding:14px 15px;font:15px Manrope;outline:none;border-radius:0}.field input:focus,.field textarea:focus{border-color:var(--cyan)}.field textarea{min-height:150px;resize:vertical}
+    .formrow{display:grid;grid-template-columns:1fr 1fr;gap:16px}.submit{margin-top:20px;border:1px solid var(--acid);background:var(--acid);color:#071008;padding:14px 18px;font:700 11px 'Space Mono';letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.submit:hover{filter:brightness(1.08)}.formnote{font-size:12px;color:var(--muted);line-height:1.5;margin-top:12px}.status{margin-top:12px;color:var(--acid);font:11px 'Space Mono';min-height:16px}
+    .links{margin-top:42px;border-top:1px solid var(--line)}.link{display:flex;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--line);font:15px 'Space Mono';transition:.2s}.link:hover{padding-left:12px;color:var(--acid)}
+    footer{padding:30px 0 42px;border-top:1px solid var(--line);color:var(--muted);font:10px 'Space Mono';display:flex;justify-content:space-between;letter-spacing:.05em}
+    .reveal{opacity:0;transform:translateY(20px);animation:reveal .8s cubic-bezier(.2,.8,.2,1) forwards}.d1{animation-delay:.15s}.d2{animation-delay:.3s}.d3{animation-delay:.45s}@keyframes reveal{to{opacity:1;transform:none}}
+    @media(max-width:760px){.wrap{width:min(100% - 28px,1180px)}.navlinks{display:none}.hero{grid-template-columns:1fr;min-height:790px;padding:85px 0 90px}.sigil{width:220px;position:absolute;right:-45px;bottom:115px;opacity:.55}.hero h1{font-size:72px}.about,.contact{grid-template-columns:1fr;gap:32px}.systems{grid-template-columns:1fr}.section{padding:82px 0}.manifest{font-size:29px}.scroll{bottom:28px}.formrow{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+<div class="grid"></div><div class="noise"></div>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="#top">illuminati<i>rex</i></a>
+    <div class="navlinks"><a href="#about">кодекс</a><a href="#practice">практика</a><a href="#books">книги</a><a href="#contact">связь</a></div>
+    <span>Kaliningrad / 54°42′N</span>
+  </nav>
+  <main id="top">
+    <section class="hero">
+      <div>
+        <div class="eyebrow reveal">Spiritus · Anima · Corpus</div>
+        <h1 class="reveal d1">Григорий<br><span class="outline">Ретота</span></h1>
+        <p class="reveal d2">Веб-разработчик, дизайнер и автор визуальных миров. Точка пересечения кода, фотографии, музыки, искусства и исследования неизведанного.</p>
+        <div class="tags reveal d3"><span class="tag">WEB / UI</span><span class="tag">PHP · MYSQL</span><span class="tag">PHOTO</span><span class="tag">MUSIC</span><span class="tag">CYBERNETICS</span></div>
+      </div>
+      <div class="sigil"><b>R</b><small>ANNVIT CŒPTIS</small></div>
+      <div class="scroll">прокрутить вниз</div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="sectionhead"><span class="index">01 / КОДЕКС</span><h2>Ясность — это<br>распределение света.</h2></div>
+      <div class="about"><p class="manifest">«Познав тьму, можешь начинать делать видимый свет.»</p><p class="copy">Живу и работаю в <strong>Калининграде / KenigsBerg</strong>. Создаю цифровые пространства, где визуальная форма не отделена от смысла. В работе ценю самостоятельность мышления, точность обещаний и право смотреть за пределы привычного.<br><br>Русский · English · Deutsch. Интересы: программирование, криптография, кибернетика, покер и практика наблюдения.</p></div>
+    </section>
+
+    <section class="section" id="practice">
+      <div class="sectionhead"><span class="index">02 / ПРАКТИКА</span><h2>Инструменты<br>и направления.</h2></div>
+      <div class="systems">
+        <article class="card"><span class="num">01</span><h3>Web systems</h3><p>Разработка сайтов и интерфейсов: HTML, CSS, PHP, MySQL, Joomla, SocialEngine.</p></article>
+        <article class="card"><span class="num">02</span><h3>Visual signal</h3><p>Веб-дизайн, Photoshop и фотография — от структуры до визуального характера.</p></article>
+        <article class="card"><span class="num">03</span><h3>Hidden patterns</h3><p>Криптография, кибернетика, C / C++ и исследование систем за поверхностью вещей.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="books">
+      <div class="sectionhead"><span class="index">03 / БИБЛИОТЕКА</span><h2>Рекомендуемая<br>литература.</h2></div>
+
+      <div class="shelfhead">Человек, общество, разум</div>
+      <div class="books">
+        <div class="book"><div class="book-cover" data-mark="01"><span>Sapiens</span></div><div class="book-meta"><b>Sapiens. Краткая история человечества</b>Юваль Ной Харари</div></div>
+        <div class="book"><div class="book-cover" data-mark="02"><span>Homo Deus</span></div><div class="book-meta"><b>Homo Deus. Краткая история будущего</b>Юваль Ной Харари</div></div>
+        <div class="book"><div class="book-cover" data-mark="03"><span>21 урок</span></div><div class="book-meta"><b>21 урок для XXI века</b>Юваль Ной Харари</div></div>
+        <div class="book"><div class="book-cover c2" data-mark="04"><span>Влияние</span></div><div class="book-meta"><b>Психология влияния</b>Роберт Чалдини</div></div>
+        <div class="book"><div class="book-cover c2" data-mark="05"><span>Убеждение</span></div><div class="book-meta"><b>Психология убеждения</b>Роберт Чалдини</div></div>
+        <div class="book"><div class="book-cover c2" data-mark="06"><span>Ложь</span></div><div class="book-meta"><b>Психология лжи</b>Пол Экман</div></div>
+        <div class="book"><div class="book-cover c3" data-mark="07"><span>Люцифер</span></div><div class="book-meta"><b>Эффект Люцифера</b>Филип Зимбардо</div></div>
+        <div class="book"><div class="book-cover c3" data-mark="08"><span>Соц. психология</span></div><div class="book-meta"><b>Социальная психология</b>Дэвид Майерс</div></div>
+      </div>
+
+      <div class="shelfhead">Код и практика</div>
+      <div class="books">
+        <div class="book"><div class="book-cover" data-mark="09"><span>PHP · MySQL</span></div><div class="book-meta"><b>PHP, MySQL, JavaScript и HTML5</b>Робин Никсон</div></div>
+        <div class="book"><div class="book-cover" data-mark="10"><span>Ассемблер</span></div><div class="book-meta"><b>Ассемблер для DOS, Windows и UNIX</b>Сергей Зубков</div></div>
+        <div class="book"><div class="book-cover c2" data-mark="11"><span>Responsive</span></div><div class="book-meta"><b>Отзывчивый веб-дизайн</b>Бен Фрейн</div></div>
+        <div class="book"><div class="book-cover" data-mark="12"><span>C++</span></div><div class="book-meta"><b>C++: базовый курс</b>Герберт Шилдт</div></div>
+      </div>
+
+      <div class="shelfhead">Проза</div>
+      <div class="books">
+        <div class="book"><div class="book-cover c3" data-mark="13"><span>Am. Gods</span></div><div class="book-meta"><b>Американские боги</b>Нил Гейман</div></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<section class="quote-block"><div class="wrap"><blockquote>Невозможное возможно.</blockquote><div class="attribution">— личный принцип</div></div></section>
+
+<div class="wrap">
+  <section class="section" id="contact">
+    <div class="contact">
+      <div>
+        <span class="index">04 / КОНТАКТ</span>
+        <h2>Начать<br><span>диалог.</span></h2>
+        <div class="links">
+          <a class="link" href="tel:+79217121024"><span>телефон</span><span>+7 921 712 10 24 ↗</span></a>
+          <a class="link" href="https://lainchan.org/irc" target="_blank" rel="noopener noreferrer"><span>IRC</span><span>lainchan.org/irc ↗</span></a>
+          <a class="link" href="https://vk.ru/illuminatirex" target="_blank" rel="noopener noreferrer"><span>VK</span><span>@illuminatirex ↗</span></a>
+          <div class="link"><span>место</span><span>Калининград, RU</span></div>
+        </div>
+      </div>
+
+      <form class="feedback" id="feedbackForm" action="https://formsubmit.co/grigoryretota@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Новое сообщение с сайта illuminatirex">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+        <div class="formrow">
+          <div class="field"><label for="name">Имя</label><input id="name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="field"><label for="message">Сообщение</label><textarea id="message" name="message" required></textarea></div>
+        <button class="submit" type="submit">Отправить сообщение ↗</button>
+        <div class="status" id="status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+  <footer><span>© ILLUMINATIREX</span><span>SPIRITUS · ANIMA · CORPUS</span></footer>
+</div>
+
+<script>
+  const form = document.getElementById('feedbackForm');
+  const status = document.getElementById('status');
+  form.addEventListener('submit', () => {
+    if (form.action.includes('YOUR_EMAIL_HERE')) {
+      event.preventDefault();
+      status.textContent = 'Сначала укажите email получателя в action формы.';
+    } else {
+      status.textContent = 'Отправляем…';
+    }
+  });
+</script>
+</body>
+</html>
