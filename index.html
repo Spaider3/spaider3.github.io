@@ -2,13 +2,13 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Григорий Ретота — веб-разработка, дизайн, фотография и исследование цифровых систем. Калининград.">
   <meta name="theme-color" content="#06080c">
   <meta property="og:title" content="Григорий Ретота — illuminatirex">
   <meta property="og:description" content="Веб-разработка, дизайн, фотография и исследование цифровых систем.">
   <title>Григорий Ретота — illuminatirex</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
@@ -33,11 +33,13 @@
     .book{display:flex;flex-direction:column;gap:12px}
     .book-cover{aspect-ratio:2/3;border:1px solid var(--line);position:relative;overflow:hidden;background:linear-gradient(160deg,#131c26,#070a0e 68%);padding:14px;display:flex;flex-direction:column;justify-content:flex-end;transition:.25s}
     .book-cover:hover{transform:translateY(-5px);border-color:var(--acid)}
-    .book-cover:before{content:attr(data-mark);position:absolute;top:14px;left:14px;font:800 12px 'Space Mono';letter-spacing:.06em;color:var(--acid)}
-    .book-cover:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(184,255,61,.14),transparent 55%)}
-    .book-cover span{position:relative;font:800 21px/1.08 Syne;letter-spacing:-.03em;color:var(--ink)}
-    .book-cover.c2:before{color:var(--cyan)}.book-cover.c2:after{background:radial-gradient(circle at 30% 20%,rgba(85,247,227,.14),transparent 55%)}
-    .book-cover.c3:before{color:var(--hot)}.book-cover.c3:after{background:radial-gradient(circle at 30% 20%,rgba(255,87,117,.14),transparent 55%)}
+    .book-cover:before{content:attr(data-mark);position:absolute;top:14px;left:14px;z-index:2;font:800 12px 'Space Mono';letter-spacing:.06em;color:var(--acid);text-shadow:0 1px 6px rgba(0,0,0,.6)}
+    .book-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+    .book-cover span{display:none;position:relative;font:800 21px/1.08 Syne;letter-spacing:-.03em;color:var(--ink)}
+    .book-cover.noimg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(184,255,61,.14),transparent 55%)}
+    .book-cover.noimg span{display:block}
+    .book-cover.c2:before{color:var(--cyan)}.book-cover.c2.noimg:after{background:radial-gradient(circle at 30% 20%,rgba(85,247,227,.14),transparent 55%)}
+    .book-cover.c3:before{color:var(--hot)}.book-cover.c3.noimg:after{background:radial-gradient(circle at 30% 20%,rgba(255,87,117,.14),transparent 55%)}
     .book-meta{font:11px 'Space Mono';color:var(--muted);line-height:1.55}.book-meta b{display:block;color:var(--ink);font:700 13.5px Manrope;margin-bottom:3px;letter-spacing:-.01em}
     @media(max-width:760px){.books{grid-template-columns:repeat(2,1fr)}}
     .quote-block{padding:135px 0;text-align:center;background:linear-gradient(140deg,#0e1518,#070a0e)}blockquote{font:italic clamp(31px,5vw,62px)/1.15 var(--serif);max-width:1000px;margin:0 auto;color:#e6f1ec}blockquote:before{content:'“';display:block;color:var(--acid);font:90px/0.5 Syne;margin-bottom:20px}.attribution{margin-top:29px;color:var(--muted);font:11px 'Space Mono';letter-spacing:.09em;text-transform:uppercase}
@@ -90,27 +92,27 @@
 
       <div class="shelfhead">Человек, общество, разум</div>
       <div class="books">
-        <div class="book"><div class="book-cover" data-mark="01"><span>Sapiens</span></div><div class="book-meta"><b>Sapiens. Краткая история человечества</b>Юваль Ной Харари</div></div>
-        <div class="book"><div class="book-cover" data-mark="02"><span>Homo Deus</span></div><div class="book-meta"><b>Homo Deus. Краткая история будущего</b>Юваль Ной Харари</div></div>
-        <div class="book"><div class="book-cover" data-mark="03"><span>21 урок</span></div><div class="book-meta"><b>21 урок для XXI века</b>Юваль Ной Харари</div></div>
-        <div class="book"><div class="book-cover c2" data-mark="04"><span>Влияние</span></div><div class="book-meta"><b>Психология влияния</b>Роберт Чалдини</div></div>
-        <div class="book"><div class="book-cover c2" data-mark="05"><span>Убеждение</span></div><div class="book-meta"><b>Психология убеждения</b>Роберт Чалдини</div></div>
-        <div class="book"><div class="book-cover c2" data-mark="06"><span>Ложь</span></div><div class="book-meta"><b>Психология лжи</b>Пол Экман</div></div>
-        <div class="book"><div class="book-cover c3" data-mark="07"><span>Люцифер</span></div><div class="book-meta"><b>Эффект Люцифера</b>Филип Зимбардо</div></div>
-        <div class="book"><div class="book-cover c3" data-mark="08"><span>Соц. психология</span></div><div class="book-meta"><b>Социальная психология</b>Дэвид Майерс</div></div>
+        <div class="book"><div class="book-cover" data-mark="01"><img src="https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg" alt="Sapiens" loading="lazy" onerror="this.remove();this.parentElement.classList.add('noimg')" onload="if(this.naturalWidth<=1){this.remove();this.parentElement.classList.add('noimg')}"><span>Sapiens</span></div><div class="book-meta"><b>Sapiens. Краткая история человечества</b>Юваль Ной Харари</div></div>
+        <div class="book"><div class="book-cover" data-mark="02"><img src="https://covers.openlibrary.org/b/isbn/9781784703936-L.jpg" alt="Homo Deus" loading="lazy" onerror="this.remove();this.parentElement.classList.add('noimg')" onload="if(this.naturalWidth<=1){this.remove();this.parentElement.classList.add('noimg')}"><span>Homo Deus</span></div><div class="book-meta"><b>Homo Deus. Краткая история будущего</b>Юваль Ной Харари</div></div>
+        <div class="book"><div class="book-cover" data-mark="03"><img src="https://covers.openlibrary.org/b/isbn/9781787330672-L.jpg" alt="21 урок для XXI века" loading="lazy" onerror="this.remove();this.parentElement.classList.add('noimg')" onload="if(this.naturalWidth<=1){this.remove();this.parentElement.classList.add('noimg')}"><span>21 урок</span></div><div class="book-meta"><b>21 урок для XXI века</b>Юваль Ной Харари</div></div>
+        <div class="book"><div class="book-cover c2" data-mark="04"><img src="https://covers.openlibrary.org/b/isbn/9780061241895-L.jpg" alt="Психология влияния" loading="lazy" onerror="this.remove();this.parentElement.classList.add('noimg')" onload="if(this.naturalWidth<=1){this.remove();this.parentElement.classList.add('noimg')}"><span>Влияние</span></div><div class="book-meta"><b>Психология влияния</b>Роберт Чалдини</div></div>
+        <div class="book"><div class="book-cover c2" data-mark="05"><img src="https://covers.openlibrary.org/b/isbn/9781416570967-L.jpg" alt="Психология убеждения" loading="lazy" onerror="this.remove();this.parentElement.classList.add('noimg')" onload="if(this.naturalWidth<=1){this.remove();this.parentElement.classList.add('noimg')}"><span>Убеждение</span></div><div class="book-meta"><b>Психология убеждения</b>Роберт Чалдини</div></div>
+        <div class="book"><div class="book-cover c2" data-mark="06"><img src="https://covers.openlibrary.org/b/isbn/9780393337457-L.jpg" alt="Психология лжи" loading="lazy" onerror="this.remove();this.parentElement.classList.add('noimg')" onload="if(this.naturalWidth<=1){this.remove();this.parentElement.classList.add('noimg')}"><span>Ложь</span></div><div class="book-meta"><b>Психология лжи</b>Пол Экман</div></div>
+        <div class="book"><div class="book-cover c3" data-mark="07"><img src="https://covers.openlibrary.org/b/isbn/9781400064113-L.jpg" alt="Эффект Люцифера" loading="lazy" onerror="this.remove();this.parentElement.classList.add('noimg')" onload="if(this.naturalWidth<=1){this.remove();this.parentElement.classList.add('noimg')}"><span>Люцифер</span></div><div class="book-meta"><b>Эффект Люцифера</b>Филип Зимбардо</div></div>
+        <div class="book"><div class="book-cover c3" data-mark="08"><img src="https://covers.openlibrary.org/b/isbn/9781260397116-L.jpg" alt="Социальная психология" loading="lazy" onerror="this.remove();this.parentElement.classList.add('noimg')" onload="if(this.naturalWidth<=1){this.remove();this.parentElement.classList.add('noimg')}"><span>Соц. психология</span></div><div class="book-meta"><b>Социальная психология</b>Дэвид Майерс</div></div>
       </div>
 
       <div class="shelfhead">Код и практика</div>
       <div class="books">
-        <div class="book"><div class="book-cover" data-mark="09"><span>PHP · MySQL</span></div><div class="book-meta"><b>PHP, MySQL, JavaScript и HTML5</b>Робин Никсон</div></div>
-        <div class="book"><div class="book-cover" data-mark="10"><span>Ассемблер</span></div><div class="book-meta"><b>Ассемблер для DOS, Windows и UNIX</b>Сергей Зубков</div></div>
-        <div class="book"><div class="book-cover c2" data-mark="11"><span>Responsive</span></div><div class="book-meta"><b>Отзывчивый веб-дизайн</b>Бен Фрейн</div></div>
-        <div class="book"><div class="book-cover" data-mark="12"><span>C++</span></div><div class="book-meta"><b>C++: базовый курс</b>Герберт Шилдт</div></div>
+        <div class="book"><div class="book-cover" data-mark="09"><img src="https://covers.openlibrary.org/b/isbn/9781491978917-L.jpg" alt="PHP, MySQL, JavaScript и HTML5" loading="lazy" onerror="this.remove();this.parentElement.classList.add('noimg')" onload="if(this.naturalWidth<=1){this.remove();this.parentElement.classList.add('noimg')}"><span>PHP · MySQL</span></div><div class="book-meta"><b>PHP, MySQL, JavaScript и HTML5</b>Робин Никсон</div></div>
+        <div class="book"><div class="book-cover" data-mark="10"><img src="https://covers.openlibrary.org/b/isbn/5940742599-L.jpg" alt="Ассемблер для DOS, Windows и UNIX" loading="lazy" onerror="this.remove();this.parentElement.classList.add('noimg')" onload="if(this.naturalWidth<=1){this.remove();this.parentElement.classList.add('noimg')}"><span>Ассемблер</span></div><div class="book-meta"><b>Ассемблер для DOS, Windows и UNIX</b>Сергей Зубков</div></div>
+        <div class="book"><div class="book-cover c2" data-mark="11"><img src="https://covers.openlibrary.org/b/isbn/9781849693189-L.jpg" alt="Отзывчивый веб-дизайн" loading="lazy" onerror="this.remove();this.parentElement.classList.add('noimg')" onload="if(this.naturalWidth<=1){this.remove();this.parentElement.classList.add('noimg')}"><span>Responsive</span></div><div class="book-meta"><b>Отзывчивый веб-дизайн</b>Бен Фрейн</div></div>
+        <div class="book"><div class="book-cover" data-mark="12"><img src="https://covers.openlibrary.org/b/isbn/9780072232158-L.jpg" alt="C++: базовый курс" loading="lazy" onerror="this.remove();this.parentElement.classList.add('noimg')" onload="if(this.naturalWidth<=1){this.remove();this.parentElement.classList.add('noimg')}"><span>C++</span></div><div class="book-meta"><b>C++: базовый курс</b>Герберт Шилдт</div></div>
       </div>
 
       <div class="shelfhead">Проза</div>
       <div class="books">
-        <div class="book"><div class="book-cover c3" data-mark="13"><span>Am. Gods</span></div><div class="book-meta"><b>Американские боги</b>Нил Гейман</div></div>
+        <div class="book"><div class="book-cover c3" data-mark="13"><img src="https://covers.openlibrary.org/b/isbn/9780060558123-L.jpg" alt="Американские боги" loading="lazy" onerror="this.remove();this.parentElement.classList.add('noimg')" onload="if(this.naturalWidth<=1){this.remove();this.parentElement.classList.add('noimg')}"><span>Am. Gods</span></div><div class="book-meta"><b>Американские боги</b>Нил Гейман</div></div>
       </div>
     </section>
   </main>
